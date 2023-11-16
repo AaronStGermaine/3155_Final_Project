@@ -9,6 +9,7 @@ class OrderBase(BaseModel):
     customer_name: str
     customer_phone: int
     customer_address: str
+    customer_member: bool
     description: Optional[str] = None
 
 
@@ -20,6 +21,7 @@ class OrderUpdate(BaseModel):
     customer_name: Optional[str] = None
     customer_phone: Optional[int] = None
     customer_address: Optional[str] = None
+    customer_member: Optional[bool] = None
     description: Optional[str] = None
 
 

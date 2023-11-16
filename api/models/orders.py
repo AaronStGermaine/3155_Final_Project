@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DATETIME
+from sqlalchemy import Column, ForeignKey, Integer, String, BOOLEAN, DATETIME
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from ..dependencies.database import Base
@@ -11,6 +11,7 @@ class Order(Base):
     customer_name = Column(String(100), ForeignKey('customers.name'))
     customer_phone = Column(Integer, ForeignKey('customers.phone'))
     customer_address = Column(String(255), ForeignKey('customers.address'))
+    customer_member = Column(BOOLEAN, ForeignKey('customers.member'), default=False)
     order_date = Column(DATETIME, nullable=False, server_default=str(datetime.now()))
     description = Column(String(300))
 

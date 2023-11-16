@@ -7,6 +7,7 @@ class CustomerBase(BaseModel):
     phone: int
     address: str
     payment_method: str
+    member: bool
 
 
 class CustomerCreate(CustomerBase):
@@ -18,12 +19,14 @@ class CustomerUpdate(BaseModel):
     phone: Optional[int] = None
     address: Optional[str] = None
     payment_method: Optional[str] = None
+    member: Optional[bool] = None
 
 
 class Customer(CustomerBase):
     id: int
     name: str
     phone: int
+    member: bool
 
     class ConfigDict:
         from_attributes = True

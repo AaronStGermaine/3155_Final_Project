@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DATETIME
+from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DATETIME, BOOLEAN
 from sqlalchemy.orm import relationship
 from ..dependencies.database import Base
 
@@ -10,5 +10,6 @@ class Customer(Base):
     phone = Column(Integer, nullable=False)
     address = Column(String(255), nullable=False)
     payment_method = Column(String(100), nullable=False)
+    member = Column(BOOLEAN, default=False, nullable=False)
 
     sandwich = relationship("Sandwich", back_populates="customers")

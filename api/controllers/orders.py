@@ -9,6 +9,7 @@ def create(db: Session, request):
         customer_name=request.customers.name,
         customer_phone=request.customers.phone,
         customer_address=request.customers.address,
+        customer_member=request.customers.member,
         description=request.description
     )
 
