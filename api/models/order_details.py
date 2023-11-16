@@ -1,6 +1,5 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DATETIME
 from sqlalchemy.orm import relationship
-from datetime import datetime
 from ..dependencies.database import Base
 
 class OrderDetail(Base):
@@ -8,8 +7,10 @@ class OrderDetail(Base):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     order_id = Column(Integer, ForeignKey("orders.id"))
-    sandwich_id = Column(Integer, ForeignKey("sandwiches.id"))
+    food_id = Column(Integer, ForeignKey("foods.id"))
+    promo_id = Column(Integer, ForeignKey("promos.id"))
     amount = Column(Integer, index=True, nullable=False)
 
-    sandwich = relationship("Sandwich", back_populates="order_details")
+    food = relationship("Food", back_populates="order_details")
     order = relationship("Order", back_populates="order_details")
+    promo = relationship("Promo", back_populates="order_details")
