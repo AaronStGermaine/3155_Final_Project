@@ -9,5 +9,5 @@ class Promo(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     promo_name = Column(String(100), nullable=False)
     discount = Column(FLOAT, nullable=False, server_default='0.0')
+    expiration_date = Column(String(100))
 
-    order_details = relationship("OrderDetail", back_populates="promo")

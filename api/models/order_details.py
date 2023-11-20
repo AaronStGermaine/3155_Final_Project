@@ -9,8 +9,9 @@ class OrderDetail(Base):
     order_id = Column(Integer, ForeignKey("orders.id"))
     food_id = Column(Integer, ForeignKey("foods.id"))
     promo_id = Column(Integer, ForeignKey("promos.id"))
+    status = Column(String(200), nullable=False)
     amount = Column(Integer, index=True, nullable=False)
 
-    food = relationship("Food", back_populates="order_details")
-    order = relationship("Order", back_populates="order_details")
-    promo = relationship("Promo", back_populates="order_details")
+    food = relationship("Food", back_populates="order_detail")
+    order = relationship("Order", back_populates="order_detail")
+    promo = relationship("Promo", back_populates="order_detail")

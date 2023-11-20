@@ -8,6 +8,7 @@ def create(db: Session, request):
     new_item = model.Food(
         food_name=request.food_name,
         food_category=request.food_category,
+        food_ingredients=request.food_ingredients,
         calories=request.calories,
         price=request.price
     )
