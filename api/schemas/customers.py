@@ -1,5 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel
+from .payment_info import PaymentInfo
 
 
 class CustomerBase(BaseModel):
@@ -7,7 +8,7 @@ class CustomerBase(BaseModel):
     email: str
     phone: int
     address: str
-    payment_method: str
+    payment_id: int
     member: bool
 
 
@@ -20,7 +21,7 @@ class CustomerUpdate(BaseModel):
     email: Optional[str] = None
     phone: Optional[int] = None
     address: Optional[str] = None
-    payment_method: Optional[str] = None
+    payment_id: Optional[str] = None
     member: Optional[bool] = None
 
 
@@ -29,6 +30,7 @@ class Customer(CustomerBase):
     name: str
     email: str
     phone: int
+    payment_id: PaymentInfo = None
     member: bool
 
     class ConfigDict:

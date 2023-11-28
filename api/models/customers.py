@@ -10,7 +10,8 @@ class Customer(Base):
     email = Column(String(100))
     phone = Column(Integer, nullable=False)
     address = Column(String(255), nullable=False)
-    payment_method = Column(String(100), nullable=False)
+    payment_id = Column(Integer, ForeignKey("payment_info.id"), nullable=False)
     member = Column(BOOLEAN, default=False, nullable=False)
 
     orders = relationship("Order", back_populates="customer")
+    payment_info = relationship("PaymentInfo", back_populates="customer")
