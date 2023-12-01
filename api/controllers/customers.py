@@ -10,7 +10,7 @@ def create(db: Session, request):
         email=request.email,
         phone=request.phone,
         address=request.address,
-        payment_id=request.payment_info.id,
+        payment_id=request.payment_id,
         member=request.member
     )
 

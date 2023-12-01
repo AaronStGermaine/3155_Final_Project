@@ -11,3 +11,4 @@ class Promo(Base):
     discount = Column(FLOAT, nullable=False, server_default='0.0')
     expiration_date = Column(String(100))
 
+    order_detail = relationship("OrderDetail", back_populates="promo")

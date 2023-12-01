@@ -11,4 +11,4 @@ class PaymentInfo(Base):
     exp_date = Column(String(100))
     transaction_status = Column(String(100))
 
-    orders = relationship("Order", back_populates="customer")
+    customer = relationship("Customer", back_populates="payment_info")

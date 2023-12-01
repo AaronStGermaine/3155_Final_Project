@@ -27,11 +27,7 @@ class CustomerUpdate(BaseModel):
 
 class Customer(CustomerBase):
     id: int
-    name: str
-    email: str
-    phone: int
     payment_id: PaymentInfo = None
-    member: bool
 
     class ConfigDict:
         from_attributes = True

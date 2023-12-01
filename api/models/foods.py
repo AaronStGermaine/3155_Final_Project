@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DATETIME
+from sqlalchemy import Column, ForeignKey, Integer, String, FLOAT, DATETIME
 from sqlalchemy.orm import relationship
 from ..dependencies.database import Base
 
@@ -11,7 +11,7 @@ class Food(Base):
     food_category = Column(String(100), unique=True, nullable=False)
     food_ingredients = Column(String(200), nullable=False)
     calories = Column(Integer, nullable=False)
-    price = Column(DECIMAL(4, 2), nullable=False, server_default='0.0')
+    price = Column(FLOAT, nullable=False, server_default='0.0')
 
-    recipes = relationship("Recipe", back_populates="foods")
-    order_details = relationship("OrderDetail", back_populates="foods")
+    recipe = relationship("Recipe", back_populates="food")
+    order_detail = relationship("OrderDetail", back_populates="food")
