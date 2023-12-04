@@ -23,10 +23,6 @@ class PaymentInfoUpdate(BaseModel):
 
 class PaymentInfo(PaymentInfoBase):
     id: int
-    payment_type: str
-    card_number: int
-    exp_date: str
-    transaction_status: str
 
 
     class ConfigDict:

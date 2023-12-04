@@ -27,8 +27,8 @@ class OrderDetailUpdate(BaseModel):
 class OrderDetail(OrderDetailBase):
     id: int
     order: Order = None
-    promo: Promo = None
     food: Food = None
+    promo: Promo = None
 
 
     class ConfigDict:

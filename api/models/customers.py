@@ -8,7 +8,7 @@ class Customer(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String(100), nullable=False)
     email = Column(String(100))
-    phone = Column(Integer, nullable=False)
+    phone = Column(String(100), nullable=False)
     address = Column(String(255), nullable=False)
     payment_id = Column(Integer, ForeignKey("payment_info.id"))
     member = Column(BOOLEAN, default=False, nullable=False)
