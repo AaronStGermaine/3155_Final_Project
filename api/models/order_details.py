@@ -8,7 +8,7 @@ class OrderDetail(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     order_id = Column(Integer, ForeignKey("orders.id"))
     food_id = Column(Integer, ForeignKey("foods.id"))
-    promo_id = Column(Integer, ForeignKey("promos.id"))
+    promo_id = Column(Integer, ForeignKey("promos.id"), nullable=True)
     status = Column(String(200), nullable=False)
     amount = Column(FLOAT, index=True, nullable=False)
 

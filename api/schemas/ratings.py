@@ -6,6 +6,7 @@ from .order_details import OrderDetail
 class RatingBase(BaseModel):
     stars: int
     description: str
+    order_id: int
 
 
 class RatingCreate(RatingBase):
@@ -20,9 +21,7 @@ class RatingUpdate(BaseModel):
 
 class Rating(RatingBase):
     id: int
-    stars: int
-    description: str
-    order_id: OrderDetail = None
+    order_detail: OrderDetail = None
 
     class ConfigDict:
         from_attributes = True

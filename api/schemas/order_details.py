@@ -8,7 +8,7 @@ from .orders import Order
 class OrderDetailBase(BaseModel):
     order_id: int
     food_id: int
-    promo_id: int
+    promo_id: Optional[int] = None
     status: str
     amount: float
 
@@ -28,7 +28,7 @@ class OrderDetail(OrderDetailBase):
     id: int
     order: Order = None
     food: Food = None
-    promo: Promo = None
+    promo: Optional[Promo] = None
 
 
     class ConfigDict:

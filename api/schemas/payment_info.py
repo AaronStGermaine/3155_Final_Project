@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 class PaymentInfoBase(BaseModel):
     payment_type: str
-    card_number: int
+    card_number: str
     exp_date: str
     transaction_status: str
 
@@ -16,7 +16,7 @@ class PaymentInfoCreate(PaymentInfoBase):
 
 class PaymentInfoUpdate(BaseModel):
     payment_type: Optional[str] = None
-    card_number: Optional[int] = None
+    card_number: Optional[str] = None
     exp_date: Optional[str] = None
     transaction_status: Optional[str] = None
 

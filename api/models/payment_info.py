@@ -7,7 +7,7 @@ class PaymentInfo(Base):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     payment_type = Column(String(100), nullable=False)
-    card_number = Column(Integer)
+    card_number = Column(String(100))
     exp_date = Column(String(100))
     transaction_status = Column(String(100))
 
