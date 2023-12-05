@@ -19,7 +19,7 @@ class FoodCreate(FoodBase):
 class FoodUpdate(BaseModel):
     food_name: Optional[str] = None
     food_category: Optional[str] = None
-    food_ingredients: Resource = None
+    food_ingredients: Optional[str] = None
     calories: Optional[int] = None
     price: Optional[float] = None
 
