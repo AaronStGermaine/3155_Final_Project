@@ -13,6 +13,10 @@ class RatingCreate(RatingBase):
     pass
 
 
+class RatingReadSome(RatingBase):
+    stars: int
+
+
 class RatingUpdate(BaseModel):
     stars: Optional[int] = None
     description: Optional[str] = None
