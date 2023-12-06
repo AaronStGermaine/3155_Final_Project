@@ -33,3 +33,8 @@ def update(rating_id: int, request: schema.RatingUpdate, db: Session = Depends(g
 @router.delete("/{rating_id}")
 def delete(rating_id: int, db: Session = Depends(get_db)):
     return controller.delete(db=db, rating_id=rating_id)
+
+
+@router.get("/{stars}", response_model=list[schema.Rating])
+def read_some(stars: int, db: Session = Depends(get_db)):
+    return controller.read_some(db, stars=stars)
