@@ -21,7 +21,6 @@ class RatingUpdate(BaseModel):
 
 class Rating(RatingBase):
     id: int
-    order_detail: OrderDetail = None
 
     class ConfigDict:
         from_attributes = True

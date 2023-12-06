@@ -17,6 +17,9 @@ def test_create_order(db_session):
     # Create a sample order
     order_data = {
         "customer_name": "John Doe",
+        "customer_phone": "1234567890",
+        "customer_address": "123 Main St",
+        "customer_member": "true",
         "description": "Test order"
     }
 
@@ -28,4 +31,7 @@ def test_create_order(db_session):
     # Assertions
     assert created_order is not None
     assert created_order.customer_name == "John Doe"
+    assert created_order.customer_phone == "1234567890"
+    assert created_order.customer_address == "123 Main St"
+    assert created_order.customer_member == "true"
     assert created_order.description == "Test order"
